@@ -5,6 +5,7 @@
  */
 
 void print_alphabelt(void);
+
 {
 	char letter;
 
