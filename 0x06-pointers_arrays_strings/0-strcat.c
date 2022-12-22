@@ -2,25 +2,27 @@
 
 /**
  * _strcat - concat 2 string
- * @dest:char
- * @src:char
- * Return:char
+ * @dest: char
+ * @src: copy from
+ * Return: Pointer to dest
  */
 char *_strcat(char *dest, char *src)
 {
-	char *s = dest;
+	int a;
+	int b;
 
-	while (*dest != '\0')
+	a = 0;
+	while (dest[a] != '\0')
 	{
-		dest++;
+		a++;
 	}
-
-	while (*src != '\0')
+	b = 0;
+	while (src[b] != '\0')
 	{
-		*dest = *src;
-		dest++;
-		src++;
+		dest[a] = src[b];
+		a++;
+		b++;
 	}
-	*dest = '\0';
-	return (s);
+	dest[a] = '\0';
+	return (dest);
 }
