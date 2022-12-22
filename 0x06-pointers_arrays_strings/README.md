@@ -1,1 +1,1 @@
-README.md for the project. pointers, arrays and strings
+Readme for this project. pointers array and strings
