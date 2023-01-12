@@ -2,16 +2,22 @@
 #include <stdlib.h>
 
 /**
- * malloc_checked - allocates memory using malloc
- * @b: memory to allocate
- * Return: pointer to allocated memory or normal process termination if error
+ * _calloc - allocates memory for an array, using malloc.
+ * @nmemb: number of elements in the array
+ * @size: size in bytes of the elements
+ * Return: void pointer to allocated memory
  */
-void *malloc_checked(unsigned int b)
+void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	void *p;
+	char *p;
+	unsigned int i;
 
-	p = malloc(b);
+	if (nmemb == 0 || size == 0)
+		return (NULL);
+	p = malloc(nmemb * size);
 	if (p == NULL)
-		exit(98);
+		return (NULL);
+	for (i = 0; i < (nmemb * size); i++)
+		p[i] = 0;
 	return (p);
 }
